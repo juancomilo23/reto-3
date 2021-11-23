@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/mains.css">
+    <link
+     rel="stylesheet" 
+     href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" 
+     crossorigin="anonymous">
+    <title>Javascript CRUD</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/"> Javascript CRUD </a>
+        </div>
+      </nav>
+    </header>
+    <main class="main-content">
+        <div class="crud-container">
+            <div class="crud-header">
+                <h1>Estudientes registrados</h1>
+                <button class="button is-success" id="openRegisterModal">
+                    <i class="fas fa-plus"></i>
+                    <span>Nuevo Estudiente</span>
+                </button>
+            </div>
+            <table class="table">
+                <thead>
+                  <tr>
+                      <th>idestudiente</th>
+                      <th>nombre</th>
+                      <th>apellido</th>
+                      <th>opciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>123</th>
+                    <td>Juan </td>
+                    <td>Ospina</td>
+                    <td>
+                        <button class="button is-warning">
+                            <i class="fas fa-pencil-alt"></i>
+                        </button>
+                        <button class="button is-danger">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                  </tr>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                          <th>id</th>
+                          <th>id matricula</th>
+                          <th>id estudiante</th>
+                          <th>id clase</th>
+                          <th>opciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>2</th>
+                        <td>12345 </td>
+                        <td>123</td>
+                        <td>1243</td>
+                        <td>
+                            <button class="button is-warning">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                            <button class="button is-danger">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                      </tr>
+                      <table class="table">
+                        <thead>
+                          <tr>
+                              <th>id clase</th>
+                              <th>titulo</th>
+                              <th>descripcion</th>
+                              <th>opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th>12345</th>
+                            <td>bases de datos </td>
+                            <td>generar bases de datos </td>
+                            <td>
+                                <button class="button is-warning">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </button>
+                                <button class="button is-danger">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                          </tr>
+                </tbody>
+              </table>
+        </div>
+    </main>
+    <div class="modal" id="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Registrar Nuevo Estudiante</p>
+            <button class="delete" aria-label="close" id="closeRegisterModal"></button>
+          </header>
+          <section class="modal-card-body">
+              <form id="register-form">
+                <div class="field">
+                    <label class="label">nombre: </label>
+                    <div class="control">
+                      <input class="input" type="text" name="nombre" placeholder="ingresa tu nombre">
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label class="label">apellido: </label>
+                    <div class="control">
+                      <input class="input" type="text" name="ape" placeholder="ingresa tu apellido">
+                    </div>
+                </div>
+          </section>
+          <footer class="modal-card-foot">
+            <button type="submit" class="button is-success">
+                <i class="fas fa-save"></i>
+                <span>Registrar</span>
+            </button>
+           </form>
+          </footer>
+        </div>
+      </div>
+      <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
+        import { getDatabase, ref, set, onValue, update, remove } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
+      </script>
+        <script src="js/app.js"></script>
+</body>
+</html>
