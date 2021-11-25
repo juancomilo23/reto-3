@@ -12,7 +12,6 @@ const modal = document .getElementById('modal')
 const closeModal = document .getElementById('closeRegisterModal')
 const registerForm = document .getElementById('register-form')
 const app = initializeApp(firebaseConfig);
-const database = geodatabade(app);
 const studentRef = firebase.database().ref('students')
 
 const showRegisterModal = () => {
